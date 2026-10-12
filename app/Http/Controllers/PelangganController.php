@@ -12,7 +12,8 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        //
+        $data['dataPelanggan'] = Pelanggan::all();
+		return view('admin.pelanggan.index',$data);
     }
 
     /**
@@ -34,7 +35,7 @@ class PelangganController extends Controller
 		$data['birthday'] = $request->birthday;
 		$data['gender'] = $request->gender;
 		$data['email'] = $request->email;
-		$data['telp'] = $request->telp;
+		$data['phone'] = $request->phone;
 
 		Pelanggan::create($data);
 
